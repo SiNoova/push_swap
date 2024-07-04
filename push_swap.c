@@ -6,7 +6,7 @@
 /*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:17:05 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/05 00:09:22 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/05 00:33:24 by akoutate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,7 @@ int	main(int ac, char **av)
 	// printf("%s", str);
 	char **split = ft_split(str, ' ');
 	free(str);
-	// printf("%s ",split[0]);
-	// printf("%s ",split[1]);
-	// printf("%s \n",split[2]);
+
 	
 	i = 0;
 	while (split[i])
