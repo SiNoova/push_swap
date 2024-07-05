@@ -6,7 +6,7 @@
 /*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 07:54:39 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/04 06:32:33 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/05 09:53:21 by akoutate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,32 @@ void ft_lstadd_back(t_node **lst, t_node *new)
 	while(temp->next)
 		temp = temp->next;
 	temp->next = new;
+}
+
+int ft_lstsize(t_node *lst)
+{
+	int i = 0;
+
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
+t_node	*ft_lstlast(t_node *lst)
+{
+	t_node	*temp;
+
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp)
+	{
+		if (!temp->next)
+			return (temp);
+		temp = temp->next;
+	}
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:17:05 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/05 00:33:24 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/05 10:03:01 by akoutate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int ac, char **av)
 	char *str = "";
 	char *tmp;
 	t_node *head = NULL;
-	t_node *current;
+	t_node *stack_b = NULL;
 	if(ac == 1)
 		return (0);
 	while (i < ac)
@@ -94,11 +94,11 @@ int	main(int ac, char **av)
 		}
 		else
 		{
-			write(1, "Errorr\n", 7);
+			write(1, "Error\n", 7);
 			exit(1);
 		}
 	}
-	// ft_lstiter(head);
+	ft_lstiter(head);
 	i = 0;
 	while (split[i++])
 		free(split[i]);
