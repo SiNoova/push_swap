@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:14:32 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/08 12:29:03 by codespace        ###   ########.fr       */
+/*   Updated: 2024/07/08 17:11:39 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void ss(t_node *stack_a, t_node *stack_b);
 void	rrotate(t_node **stack, char c);
 void rrr(t_node **stack_a, t_node **stack_b);
 int sorted_checker(t_node *stack);
-void algo(t_node *stack_a, t_node *stack_b);
+void starter(t_node **stack_a, t_node **stack_b);
+void position(t_node *stack);
+void set_index(t_node *stack);
 
 #endif
