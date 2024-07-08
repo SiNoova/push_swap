@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 02:25:28 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/07 02:21:51 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:58:58 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void rotate(t_node **stack, char c)
 	if (ft_lstsize(*stack) > 1)
 	{
 		t_node *tmp;
-		
+
 		tmp = *stack;
 		*stack = (*stack)->next;
 		ft_lstlast(tmp)->next = tmp;
@@ -92,7 +92,7 @@ void	rrotate(t_node **stack, char c)
 	if (ft_lstsize(*stack) > 1)
 	{
 		t_node *tmp;
-		
+
 		tmp = *stack;
 		*stack = ft_lstlast(tmp);
 		ft_lstlast(tmp)->next = tmp;

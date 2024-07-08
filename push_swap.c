@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:17:05 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/08 17:26:35 by codespace        ###   ########.fr       */
+/*   Updated: 2024/07/08 17:40:17 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,5 +158,4 @@ int	main(int ac, char **av)
 		free(split[i]);
 	free(split);
 	starter(&head, &stack_b);
-
 }
