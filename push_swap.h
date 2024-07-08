@@ -6,12 +6,14 @@
 /*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:14:32 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/05 09:59:16 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/07 08:20:39 by akoutate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define MAXINT 2147483647
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -21,6 +23,9 @@
 typedef struct s_node
 {
     int x;
+	int pos;
+	int index;
+	int i;
     struct s_node *next;
 }t_node;
 

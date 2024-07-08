@@ -6,11 +6,48 @@
 /*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:17:05 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/05 10:03:01 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/07 08:38:09 by akoutate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void set_index(t_node *stack)
+{
+	int i;
+
+	i = 0;
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		stack->index = i;
+		stack = stack->next;
+		i++;
+	}
+}
+
+void position(t_node *stack)
+{
+	int size;
+	int smol;
+	int i ;
+	t_node *tmp;
+
+	smol = MAXINT;
+	size = ft_lstsize - 1;
+	i = 0;
+	while (i <= size)
+	{
+		tmp = stack;
+		while (tmp)
+		{
+			if (stack->x <= smol && !stack->i)
+				smol = stack->x;
+			tmp = tmp->next
+		}
+	}
+}
 
 int empty_str(char *str)
 {
@@ -33,7 +70,7 @@ int parsing(char **lst, char *str, int j)
 	{
 		if (ft_strlen(str) == 1)
 			return (0);
-		i++;
+		i++; 
 	}
 	while (str[i])
 	{
@@ -103,4 +140,6 @@ int	main(int ac, char **av)
 	while (split[i++])
 		free(split[i]);
 	free(split);
+
+	
 } 
