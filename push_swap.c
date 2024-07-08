@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:17:05 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/07 08:38:09 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:30:04 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,35 @@ void position(t_node *stack)
 	int i ;
 	t_node *tmp;
 
-	smol = MAXINT;
-	size = ft_lstsize - 1;
+	tmp = stack;
+	size = ft_lstsize(stack) - 1;
 	i = 0;
+	while (tmp)
+	{
+		tmp->i = 0;
+		tmp = tmp->next;
+	}
 	while (i <= size)
 	{
+		smol = MAXINT;
 		tmp = stack;
 		while (tmp)
 		{
-			if (stack->x <= smol && !stack->i)
-				smol = stack->x;
-			tmp = tmp->next
+			if (tmp->x <= smol && tmp->i == 0)
+				smol = tmp->x;
+			tmp = tmp->next;
 		}
+		tmp = stack;
+		while (tmp)
+		{
+			if (tmp->x == smol)
+			{
+				tmp->i = 1;
+				tmp->pos = i;
+			}
+			tmp = tmp->next;
+		}
+		i++;
 	}
 }
 
@@ -70,7 +87,7 @@ int parsing(char **lst, char *str, int j)
 	{
 		if (ft_strlen(str) == 1)
 			return (0);
-		i++; 
+		i++;
 	}
 	while (str[i])
 	{
@@ -110,7 +127,7 @@ int	main(int ac, char **av)
 		{
 			write (1, "Error\n", 7);
 			exit(1);
-		}	
+		}
 		if (i != 1)
 			free(tmp);
 		i++;
@@ -119,7 +136,7 @@ int	main(int ac, char **av)
 	char **split = ft_split(str, ' ');
 	free(str);
 
-	
+
 	i = 0;
 	while (split[i])
 	{
@@ -135,11 +152,10 @@ int	main(int ac, char **av)
 			exit(1);
 		}
 	}
-	ft_lstiter(head);
+	//ft_lstiter(head);
 	i = 0;
 	while (split[i++])
 		free(split[i]);
 	free(split);
-
-	
-} 
+	algo(head, stack_b);
+}

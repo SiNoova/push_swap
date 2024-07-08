@@ -3,23 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 07:54:39 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/05 09:53:21 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:23:57 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+int sorted_checker(t_node *stack)
+{
+	while (stack)
+	{
+		if (stack->next && stack->x > stack->next->x)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
 
 int	my_atoi(char *str)
 {
 	int		i;
 	int		sign;
     long     nbr;
-        
+
 	i = 0;
 	sign = 1;
 	nbr = 0;
@@ -71,7 +80,7 @@ void ft_lstadd_back(t_node **lst, t_node *new)
 	if (!new)
 		return ;
 	t_node *temp;
-	
+
 	if (!*lst)
 	{
 		*lst = new;

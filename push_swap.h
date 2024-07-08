@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akoutate <akoutate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 06:14:32 by akoutate          #+#    #+#             */
-/*   Updated: 2024/07/07 08:20:39 by akoutate         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:29:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,11 @@ void pa(t_node **stack_a, t_node **stack_b);
 void pb(t_node **stack_a, t_node **stack_b);
 t_node	*ft_lstlast(t_node *lst);
 void rotate(t_node **stack, char c);
+void	swap(t_node *stack, char c);
+void ss(t_node *stack_a, t_node *stack_b);
+void	rrotate(t_node **stack, char c);
+void rrr(t_node **stack_a, t_node **stack_b);
+int sorted_checker(t_node *stack);
+void algo(t_node *stack_a, t_node *stack_b);
 
 #endif
