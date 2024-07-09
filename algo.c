@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:55:36 by codespace         #+#    #+#             */
-/*   Updated: 2024/07/08 18:55:15 by codespace        ###   ########.fr       */
+/*   Updated: 2024/07/09 10:17:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,46 @@ void sorter(t_node **stack_a, t_node **stack_b)
 	int i;
 	t_node *tmp;
 	int size;
+	int num;
 
 	size = ft_lstsize(*stack_b);
 	i = size - 1;
 	position(*stack_b);
 	tmp = *stack_b;
-	while (tmp)
+	while (i >= 0)
 	{
-		printf("num: %i, pos: %i , biggest pos: %i",tmp->x, tmp->pos, i);
-		tmp = tmp->next;
-	}
-// 	while (i >= 0)
-// 	{
-// 		tmp = *stack_b;
-
-// 		set_index(*stack_b);
-// 		while (tmp && tmp->pos != i)
-// 		{
-// 			printf("%i\n", tmp->pos);
-// 			tmp = tmp->next;
-// 		}
-// 		printf("%p\n", tmp);
-// 		if (tmp && tmp->index + 1 <= size / 2)
-// 		{
-// 			while (tmp->x == (*stack_b)->x)
-// 			{
-// 				rotate(stack_b, 'b');
-// 			}
-// 		}
-// 		else
-// 		{
-// 			while (tmp->x == (*stack_b)->x)
-// 			{ 				rrotate(stack_b, 'b');
+		set_index(*stack_b);
+		tmp = *stack_b;
+		// if (i >= size - 2)
+		// {
+		// 	printf("-----\n");
+		// 	ft_lstiter(*stack_b);
+		// 	printf("-----\n");
+		// 	ft_lstiter(*stack_a);
+		// 	printf("-----\n");
+		// 	if (i == size - 2)
+		// 		exit(0);
+		// }
+		while (tmp->pos != i)
+			tmp = tmp->next;
+		num = tmp->x;
+		if (tmp && tmp->index + 1 <= size / 2)
+		{
+			while (num != (*stack_b)->x)
+			{
+				rotate(stack_b, 'b');
+			}
+		}
+		else
+		{
+			while (num != (*stack_b)->x)
+			{
+				rrotate(stack_b, 'b');
 			}
 		}
 		pa(stack_a, stack_b);
  		i--;
-}
+	}
 }
 
 void algo(t_node **stack_a, t_node **stack_b, int size)
